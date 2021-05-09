@@ -11,12 +11,15 @@ Set-up SSH (Windows 10 to debian-based Linux VM)
 ---
 On Windows (via powershell):
 
+```sh
 ssh-keygen -q -b 2048 -t rsa
-(Save in default location & set no password)!
+```
 
+(Save in default location & set no password)!
 
 Linux:
 
+```
 apt install openssh-server
 service ssh start
 update-rc.d ssh remove
@@ -33,11 +36,12 @@ mkdir ~/.ssh
 chmod 700 ~/.ssh
 
 nano ~/.ssh/authorized_keys
+```
 
 (COPY AND PASTE rsa_id.pub from Windows Machine - located in yourusername/.ssh)
 
-
+```sh
 chmod 600 ~/.ssh/authorized_keys
-
+```
 
 Then ssh in from Windows & all should work
